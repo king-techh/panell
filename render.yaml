@@ -1,0 +1,61 @@
+services:
+  - type: web
+    name: toxic-tech-bot
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BOT_TOKEN
+        sync: false
+      - key: PTERO_PANEL_URL
+        value: http://toxic-hosting.duckdns.org
+      - key: PTERO_API_KEY
+        sync: false
+      - key: PTERO_NEST_ID
+        value: "5"
+      - key: PTERO_EGG_ID
+        value: "15"
+      - key: PTERO_NODE_ID
+        value: "1"
+      - key: PTERO_DOCKER_IMAGE
+        value: ghcr.io/ptero-eggs/yolks:nodejs_25
+      - key: SWIFTWALLET_API_KEY
+        sync: false
+      - key: SWIFTWALLET_BASE_URL
+        value: https://swiftwallet.co.ke
+      - key: XDIGITEX_API_KEY
+        sync: false
+      - key: XDIGITEX_BASE_URL
+        value: https://pay.xdigitex.space/api
+      - key: WEBHOOK_PORT
+        fromService:
+          name: toxic-tech-bot
+          type: web
+          property: port
+      - key: ADMIN_USERNAME
+        value: mnare00
+      - key: EMAIL_DOMAIN
+        value: toxictech.com
+      - key: SERVER_PREFIX
+        value: "TOXIC TECH - "
+      - key: TRIAL_DURATION_HOURS
+        value: "12"
+      - key: TRIAL_MEMORY
+        value: "300"
+      - key: TRIAL_DISK
+        value: "1000"
+      - key: TRIAL_CPU
+        value: "50"
+      - key: CHANNEL_LINK
+        value: https://t.me/toxictechke
+      - key: CHANNEL_USERNAME
+        value: "@toxictechke"
+      - key: GROUP_LINK
+        value: https://t.me/+-YNHIfjLvLc4YzFk
+      - key: GROUP_CHAT_ID
+        value: "-1003733152624"
+      - key: WHATSAPP_LINK
+        value: https://chat.whatsapp.com/HSPAImRNjQ0AkB7GG17BjZ?mode=gi_t
